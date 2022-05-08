@@ -1,0 +1,8 @@
+{
+  "/_middleware": "pages/_middleware.js",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/playlist/[id]": "pages/playlist/[id].js",
+  "/api/playlist": "pages/api/playlist.js"
+}
