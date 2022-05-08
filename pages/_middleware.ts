@@ -1,13 +1,22 @@
-import { NextResponse } from 'next/server'
+// gets executed before any request is fired
+// used for page protection
 
-const signedinPages = ['/', '/playlist', '/library']
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-export default function middleware(req) {
-  if (signedinPages.find((p) => p === req.nextUrl.pathname)) {
-    const token = req.cookies.TRAX_ACCESS_TOKEN
+const routesToProtect = ["/", "/playlist", "/library"];
 
-    if (!token) {
-      return NextResponse.redirect('/signin')
-    }
+export default function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl.clone();
+  const url = req.nextUrl.clone();
+
+  url.pathname = "/signin";
+
+  const mustBeSignedInToView = routesToProtect.find(
+    (page) => page === pathname
+  );
+  const token = req.cookies.TRAX_ACCESS_TOKEN;
+  if (!token && mustBeSignedInToView) {
+    return NextResponse.redirect(url);
   }
 }
