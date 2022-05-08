@@ -30,11 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/playlist/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/playlist/[id].js"
-    ],
     "/signin": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

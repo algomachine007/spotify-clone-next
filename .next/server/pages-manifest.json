@@ -3,9 +3,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/signin": "pages/signin.js",
-  "/": "pages/index.js",
-  "/api/signin": "pages/api/signin.js",
+  "/api/playlist": "pages/api/playlist.js",
   "/api/me": "pages/api/me.js",
-  "/api/playlist": "pages/api/playlist.js"
+  "/signin": "pages/signin.js",
+  "/api/signin": "pages/api/signin.js",
+  "/": "pages/index.js"
 }

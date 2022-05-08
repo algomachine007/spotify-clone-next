@@ -26,10 +26,10 @@ const run = async () => {
 
   const salt = bcrypt.genSaltSync()
   const user = await prisma.user.upsert({
-    where: { email: 'user@test.com' },
+    where: { email: 'test@gmail.com' },
     update: {},
     create: {
-      email: 'user@test.com',
+      email: 'test@gmail.com',
       password: bcrypt.hashSync('password', salt),
       firstName: 'Benneth',
       lastName: 'Uzochukwu',
